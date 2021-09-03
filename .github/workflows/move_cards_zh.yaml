@@ -1,8 +1,17 @@
-- name: Sync issue status
-  uses: signcl/zenhub-move-card@v1
-  with:
-    zh-repository-id: 202221647
-    zh-token: ${{ secrets.ZENHUB_TOKEN }}
-    zh-workspace-id: 5e41d1a63e11c398f51c288b
-    # target pipeline name in zenhub
-    zh-target-pipeline-name: "In Progress"
+name: Sync issue status
+
+on: issues
+
+jobs:
+  move cards:
+    runs-on: ubuntu-latest
+    name: Move cards in ZH
+    steps: 
+    - name: Move cards in ZH
+      uses: signcl/zenhub-move-card@v1
+      with:
+        zh-repository-id: 202221647
+        zh-token: ${{ secrets.ZENHUB_TOKEN }}
+        zh-workspace-id: 5e41d1a63e11c398f51c288b
+        # target pipeline name in zenhub
+        zh-target-pipeline-name: "In Progress"
