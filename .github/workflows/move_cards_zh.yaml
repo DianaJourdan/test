@@ -1,7 +1,5 @@
 name: Sync issue status
-
 on: issues
-
 jobs:
   move cards:
     runs-on: ubuntu-latest
