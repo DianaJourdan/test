@@ -1,5 +1,5 @@
     - name: Sync issue status
-        uses: signcl/zenhub-move-card@master
+        uses:signcl/zenhub-move-card@v1
         with:
             zh-token: ${{ secrets.ZENHUB_TOKEN }}
             commit-message: ${{ github.event.commits[0].message }}
