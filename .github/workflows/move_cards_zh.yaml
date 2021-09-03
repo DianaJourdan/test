@@ -1,0 +1,8 @@
+    - name: Sync issue status
+        uses: signcl/zenhub-move-card@master
+        with:
+            zh-token: ${{ secrets.ZENHUB_TOKEN }}
+            commit-message: ${{ github.event.commits[0].message }}
+            zh-workspace-id: "5e41d1a63e11c398f51c288b"
+            zh-target-pipeline-name: "In Progress"
+            zh-repository-id: "202221647"
